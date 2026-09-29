@@ -1,0 +1,33 @@
+# Security hardening for thedreamreader.com
+
+# Force HTTPS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Don't serve docs, backups or dotfiles
+<FilesMatch "(?i)^(\..*|readme.*|.*bak\.(html|js)|.*\.(bak|md))$">
+  Require all denied
+</FilesMatch>
+
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
+</IfModule>
+
+
+DirectoryIndex index.html
+Options -Indexes
+<IfModule mod_mime.c>
+ AddType application/javascript .js
+ AddType font/woff2 .woff2
+ AddType image/png .png
+</IfModule>

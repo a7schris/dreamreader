@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/react.production.min.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/react-dom.production.min.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DreamReader — Bedtime audiobooks read by Misha Collins</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1D1219">
+
+<script src="assets/app-68b73531.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="assets/app-65138be7.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-01.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-02.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-03.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-04.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-05.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-06.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-07.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-01.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-02.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-03.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-04.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-05.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-06.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-07.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-01.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-02.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-03.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-04.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-05.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-06.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-07.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-08.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-09.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-10.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-11.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-12.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-13.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-14.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/font-15.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-12.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-13.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-14.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/font-15.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-12.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-13.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-14.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/font-15.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html{overflow-x:hidden}
+body{margin:0;padding:0;background:#12090E}
+*{box-sizing:border-box}
+a{color:#E8B98A;text-decoration:none}
+a:hover{color:#F2E2D2}
+::selection{background:#A8613F;color:#F2E2D2}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.9}}
+@keyframes zdrift{0%{opacity:0;transform:translateY(0) scale(.8)}15%{opacity:1}80%{opacity:0}100%{opacity:0;transform:translateY(-30px) scale(1.15)}}
+</style>
+</helmet>
+
+<div style="background:#12090E;color:#F2E2D2;font-family:Inter,system-ui,sans-serif;min-height:100vh">
+
+  <div style="background:#E8B98A;color:#1D1219;text-align:center;padding:9px 20px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase">Coming soon · Launching Fall 2026</div>
+  <header style="position:sticky;top:0;z-index:60;background:rgba(18,9,14,.84);backdrop-filter:blur(16px);border-bottom:1px solid rgba(242,226,210,.09)">
+    <div style="max-width:1180px;margin:0 auto;padding:14px 34px;display:flex;align-items:center;gap:30px">
+      <a href="#/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/img-06.webp" alt="DreamReader" style="width:38px;height:38px;border-radius:11px;display:block">
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:21px;color:#F2E2D2;letter-spacing:-.01em">DreamReader</span>
+      </a>
+      <nav style="margin-left:auto;display:flex;align-items:center;gap:28px">
+        <a href="#/" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Home</a>
+        <a href="#/contact" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Contact</a>
+        <a href="#/privacy" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Privacy</a>
+        <a href="#/terms" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Terms</a>
+        <a href="#get" style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500;color:#1D1219;background:#E8B98A;padding:10px 18px;border-radius:999px" style-hover="background:#F2E2D2;color:#1D1219">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section style="position:relative;padding:96px 34px 110px;overflow:hidden">
+      <div style="position:absolute;inset:0;background:radial-gradient(1100px 620px at 78% 8%,rgba(168,97,63,.34),transparent 62%),radial-gradient(760px 520px at 8% 92%,rgba(58,33,48,.9),transparent 68%);pointer-events:none"></div>
+      <div style="position:absolute;inset:0;opacity:.16;pointer-events:none;background-image:radial-gradient(ellipse 120px 60px at 15% 20%,#F2E2D2,transparent 70%),radial-gradient(ellipse 160px 80px at 40% 12%,#F2E2D2,transparent 70%),radial-gradient(ellipse 100px 50px at 65% 24%,#F2E2D2,transparent 70%),radial-gradient(ellipse 150px 70px at 85% 15%,#F2E2D2,transparent 70%),radial-gradient(ellipse 130px 65px at 25% 60%,#F2E2D2,transparent 70%),radial-gradient(ellipse 110px 55px at 55% 70%,#F2E2D2,transparent 70%)"></div>
+      <div style="position:absolute;top:120px;left:12%;width:3px;height:3px;border-radius:50%;background:#E8B98A;animation:twinkle 4.5s ease-in-out infinite"></div>
+      <div style="position:absolute;top:220px;left:38%;width:2px;height:2px;border-radius:50%;background:#F2E2D2;animation:twinkle 6s ease-in-out infinite .8s"></div>
+      <div style="position:absolute;top:76px;left:56%;width:2px;height:2px;border-radius:50%;background:#E8B98A;animation:twinkle 5.2s ease-in-out infinite 1.6s"></div>
+      <div style="position:relative;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:26px">
+            <span style="width:9px;height:9px;border-radius:50%;background:#A8613F;display:block"></span>
+            <span style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,226,210,.58)">Bedtime audiobooks · now featuring Misha Collins</span>
+          </div>
+          <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:76px;line-height:1.02;font-weight:400;letter-spacing:-.025em;margin:0 0 24px;color:#F2E2D2;text-wrap:pretty">Sleep with<br><em style="color:#E8B98A">Misha tonight.</em></h1>
+          <p style="font-size:18.5px;line-height:1.62;color:rgba(242,226,210,.72);max-width:460px;margin:0 0 38px;text-wrap:pretty">Calming classics, read aloud by <em style="color:#E8B98A;font-style:italic">Supernatural</em> star, bestselling author, activist, maker, mensch, and troublemaker Misha Collins. Set a timer, press play, and drift off — as much or as little as you want. Go on a streak. Make him wait for you. We won't judge.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px">
+            <a href="{{ iosUrl }}" style="display:flex;align-items:center;gap:12px;background:#E8B98A;color:#1D1219;padding:15px 26px;border-radius:14px;text-decoration:none" style-hover="background:#F2E2D2">
+              <span style="font-size:22px;line-height:1"></span>
+              <span style="display:flex;flex-direction:column;line-height:1.25"><span style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.66">Download on</span><span style="font-size:16px;font-weight:600">the App Store</span></span>
+            </a>
+          </div>
+          <p style="font-size:13px;color:rgba(242,226,210,.44);margin:0">Free to try · New reads added every month</p>
+        </div>
+        <div style="position:relative;display:flex;justify-content:center">
+          <div style="position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(168,97,63,.5),transparent 68%);filter:blur(18px)"></div>
+          <img src="assets/img-04.webp" alt="DreamReader player screen" style="position:relative;width:330px;border-radius:36px;display:block;box-shadow:0 40px 90px rgba(0,0,0,.62);animation:drift 9s ease-in-out infinite">
+          <div style="position:absolute;bottom:-30px;right:-90px;width:320px;height:320px;z-index:2">
+            <div style="position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,rgba(255,230,170,.85),rgba(255,214,150,.4) 55%,transparent 75%);filter:blur(22px);animation:twinkle 3.2s ease-in-out infinite;mix-blend-mode:screen"></div>
+            <img src="assets/img-07.webp" alt="Misha Collins" style="position:relative;width:100%;height:100%;object-fit:contain;display:block;mix-blend-mode:screen">
+            <div style="position:absolute;top:112px;left:-30px;background:#F2E2D2;color:#1D1219;font-family:Inter,sans-serif;font-size:13.5px;font-weight:600;padding:9px 14px;border-radius:16px 16px 4px 16px;box-shadow:0 8px 18px rgba(0,0,0,.35);white-space:nowrap;z-index:3">Let's get lit.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:56px 34px 10px;text-align:center;position:relative;overflow:hidden">
+      <div style="position:relative;max-width:640px;margin:0 auto">
+        <img src="assets/img-03.webp" alt="Get your Zzzs with an angel" style="width:100%;display:block;mix-blend-mode:screen">
+        <span style="position:absolute;top:6%;right:8%;font-family:'Playfair Display',Georgia,serif;font-size:20px;color:#E8B98A;opacity:0;animation:zdrift 4.5s ease-in infinite">Z</span>
+        <span style="position:absolute;top:14%;right:2%;font-family:'Playfair Display',Georgia,serif;font-size:28px;color:#F2E2D2;opacity:0;animation:zdrift 4.5s ease-in infinite 1.1s">Z</span>
+        <span style="position:absolute;top:-2%;right:14%;font-family:'Playfair Display',Georgia,serif;font-size:15px;color:#E8B98A;opacity:0;animation:zdrift 4.5s ease-in infinite 2.6s">Z</span>
+      </div>
+    </section>
+
+    <section style="padding:20px 34px 88px;border-top:1px solid rgba(242,226,210,.08);background:#160B11">
+      <div style="max-width:1180px;margin:0 auto">
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,226,210,.5);margin:0 0 48px">Three taps to sleep</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+          <div style="padding:34px 30px 36px;border:1px solid rgba(242,226,210,.1);border-radius:18px;background:linear-gradient(160deg,rgba(58,33,48,.7),rgba(29,18,25,.4))">
+            <div style="font-family:'Playfair Display',Georgia,serif;font-size:38px;color:#A8613F;line-height:1;margin-bottom:22px">01</div>
+            <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 12px;color:#F2E2D2">Choose a story</h3>
+            <p style="font-size:15.5px;line-height:1.62;color:rgba(242,226,210,.64);margin:0;text-wrap:pretty">Wind in the Willows, Walden, The Odyssey — slow, familiar books with nothing to keep up with.</p>
+          </div>
+          <div style="padding:34px 30px 36px;border:1px solid rgba(242,226,210,.1);border-radius:18px;background:linear-gradient(160deg,rgba(58,33,48,.7),rgba(29,18,25,.4))">
+            <div style="font-family:'Playfair Display',Georgia,serif;font-size:38px;color:#A8613F;line-height:1;margin-bottom:22px">02</div>
+            <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 12px;color:#F2E2D2">Set a timer</h3>
+            <p style="font-size:15.5px;line-height:1.62;color:rgba(242,226,210,.64);margin:0;text-wrap:pretty">Fifteen, thirty, or forty-five minutes. The voice softens as the clock runs down.</p>
+          </div>
+          <div style="padding:34px 30px 36px;border:1px solid rgba(242,226,210,.1);border-radius:18px;background:linear-gradient(160deg,rgba(58,33,48,.7),rgba(29,18,25,.4))">
+            <div style="font-family:'Playfair Display',Georgia,serif;font-size:38px;color:#A8613F;line-height:1;margin-bottom:22px">03</div>
+            <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:25px;font-weight:400;margin:0 0 12px;color:#F2E2D2">Drift off</h3>
+            <p style="font-size:15.5px;line-height:1.62;color:rgba(242,226,210,.64);margin:0;text-wrap:pretty">We remember where you fell asleep, so tomorrow night picks up a page or two earlier.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:100px 34px;border-top:1px solid rgba(242,226,210,.08)">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center">
+        <div style="position:relative;display:flex;justify-content:center">
+          <div style="position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(107,58,53,.55),transparent 70%);filter:blur(16px)"></div>
+          <img src="assets/img-02.webp" alt="Story library" style="position:relative;width:310px;border-radius:34px;display:block;box-shadow:0 34px 76px rgba(0,0,0,.58)">
+        </div>
+        <div>
+          <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:48px;line-height:1.1;font-weight:400;letter-spacing:-.02em;margin:0 0 20px;color:#F2E2D2;text-wrap:pretty">A library built for the last hour of the day.</h2>
+          <p style="font-size:17.5px;line-height:1.66;color:rgba(242,226,210,.7);margin:0 0 32px;max-width:520px;text-wrap:pretty">Nine gothic, dreamy classics — plus one bonus title read entirely by Misha himself. No cliffhangers, no true crime. Just the kind of prose that loosens your grip on the day.</p>
+          <div style="display:flex;flex-direction:column;gap:1px;border-top:1px solid rgba(242,226,210,.1)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">Dracula</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Bram Stoker</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">The Adventures of Sherlock Holmes</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Arthur Conan Doyle</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">Alice's Adventures in Wonderland</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Lewis Carroll</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">Grimm's Fairy Tales</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Brothers Grimm</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">The Wind in the Willows</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Kenneth Grahame</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">The Fall of the House of Usher</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Edgar Allan Poe</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">The Odyssey</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Homer</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">Pride and Prejudice</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Jane Austen</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">Wuthering Heights</span><span style="font-size:13px;color:rgba(242,226,210,.46)">Emily Brontë</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 2px;border-bottom:1px solid rgba(242,226,210,.1);background:rgba(232,185,138,.06);border-radius:8px;margin-top:6px"><span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#E8B98A">Some Things I Still Can't Tell You <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#1D1219;background:#E8B98A;padding:3px 8px;border-radius:999px;margin-left:8px;vertical-align:middle">Bonus</span></span><span style="font-size:13px;color:rgba(242,226,210,.46)">Poems · Misha Collins</span></div>
+          </div>
+          <p style="font-size:13.5px;color:rgba(242,226,210,.45);margin:16px 0 0">More titles added monthly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:96px 34px;background:linear-gradient(180deg,#160B11,#2A1620);border-top:1px solid rgba(242,226,210,.08)">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+        <div>
+          <span style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,226,210,.5)">The fade</span>
+          <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:46px;line-height:1.1;font-weight:400;letter-spacing:-.02em;margin:16px 0 18px;color:#F2E2D2;text-wrap:pretty">It gets quieter as you get sleepier.</h2>
+          <p style="font-size:17px;line-height:1.66;color:rgba(242,226,210,.7);margin:0 0 30px;max-width:470px;text-wrap:pretty">Pick a length and the reader tapers off over the final minutes — volume, pace, and warmth all easing down together. Try it:</p>
+          <div style="display:flex;gap:12px">
+            <button type="button" sc-camel-on-click="{{ pick15 }}" style="font-family:Inter,sans-serif;font-size:15px;padding:12px 26px;border-radius:999px;cursor:pointer;background:transparent;color:rgba(242,226,210,.72);border:1px solid rgba(242,226,210,.22)" style-hover="border-color:#E8B98A">15</button>
+            <button type="button" sc-camel-on-click="{{ pick30 }}" style="font-family:Inter,sans-serif;font-size:15px;padding:12px 26px;border-radius:999px;cursor:pointer;background:transparent;color:rgba(242,226,210,.72);border:1px solid rgba(242,226,210,.22)" style-hover="border-color:#E8B98A">30</button>
+            <button type="button" sc-camel-on-click="{{ pick45 }}" style="font-family:Inter,sans-serif;font-size:15px;padding:12px 26px;border-radius:999px;cursor:pointer;background:transparent;color:rgba(242,226,210,.72);border:1px solid rgba(242,226,210,.22)" style-hover="border-color:#E8B98A">45</button>
+          </div>
+          <p style="font-size:13.5px;color:rgba(242,226,210,.46);margin:20px 0 0">Fades out over the last <span style="color:#E8B98A">{{ fadeMinutes }}</span> minutes of a {{ timer }}-minute session.</p>
+        </div>
+        <div style="position:relative;display:flex;justify-content:center">
+          <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(232,185,138,.3),transparent 70%);filter:blur(20px)"></div>
+          <img src="assets/img-01.webp" alt="DreamReader home screen" style="position:relative;width:320px;border-radius:34px;display:block;box-shadow:0 34px 76px rgba(0,0,0,.55)">
+        </div>
+      </div>
+    </section>
+
+    <section id="get" style="padding:110px 34px 120px;text-align:center;border-top:1px solid rgba(242,226,210,.08)">
+      <div style="max-width:720px;margin:0 auto">
+        <img src="assets/img-06.webp" alt="" style="width:88px;height:88px;border-radius:24px;display:block;margin:0 auto 32px;box-shadow:0 20px 50px rgba(0,0,0,.5)">
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:54px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin:0 0 18px;color:#F2E2D2;text-wrap:pretty">Tonight, let someone read to you.</h2>
+        <p style="font-size:17.5px;line-height:1.64;color:rgba(242,226,210,.68);margin:0 auto 12px;max-width:480px;text-wrap:pretty">Download DreamReader and start your first story with Misha free.</p>
+        <p style="font-size:15px;color:rgba(242,226,210,.5);margin:0 0 40px">$9.99/month after your free story — sleep with him as much or as little as you want.</p>
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px">
+          <a href="{{ iosUrl }}" style="display:flex;align-items:center;gap:12px;background:#E8B98A;color:#1D1219;padding:15px 26px;border-radius:14px;text-decoration:none" style-hover="background:#F2E2D2">
+            <span style="font-size:22px;line-height:1"></span>
+            <span style="display:flex;flex-direction:column;line-height:1.25;text-align:left"><span style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.66">Download on</span><span style="font-size:16px;font-weight:600">the App Store</span></span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <section style="padding:90px 34px 100px;border-top:1px solid rgba(242,226,210,.08);background:linear-gradient(180deg,#12090E,#1D1016)">
+      <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center">
+        <a href="#/ai" target="_blank" rel="noopener" style="display:block;position:relative" style-hover="opacity:.92">
+          <div style="position:absolute;inset:12% 8% 8% 22%;border-radius:50%;background:radial-gradient(circle,rgba(255,230,170,.85),rgba(255,214,150,.4) 55%,transparent 75%);filter:blur(34px);animation:twinkle 3.2s ease-in-out infinite;mix-blend-mode:screen"></div>
+          <div style="position:absolute;inset:2% 55% 40% 0;border-radius:50%;background:radial-gradient(circle,rgba(255,214,150,.6),transparent 70%);filter:blur(30px);animation:twinkle 4s ease-in-out infinite 1.2s;mix-blend-mode:screen"></div>
+          <img src="assets/img-05.webp" alt="Pillow Talk from Misha — a note on AI, art, and actual humans" style="position:relative;width:100%;display:block">
+        </a>
+        <div>
+          <span style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,226,210,.5)">A note from Misha</span>
+          <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:40px;line-height:1.12;font-weight:400;letter-spacing:-.02em;margin:16px 0 16px;color:#F2E2D2;text-wrap:pretty">Real human. Real voice. Some AI. Full disclosure.</h2>
+          <p style="font-size:16.5px;line-height:1.66;color:rgba(242,226,210,.7);margin:0 0 28px;text-wrap:pretty">How The Dream Reader was made, where AI was used, and why he actually gives a shit about your sleep.</p>
+          <a href="#/ai" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#1D1219;background:#E8B98A;padding:13px 24px;border-radius:999px" style-hover="background:#F2E2D2;color:#1D1219">Read the AI statement →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isAi }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1000px;margin:0 auto;padding:80px 34px 110px">
+    <span style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,226,210,.5)">AI Statement</span>
+    <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:60px;line-height:1.06;font-weight:400;letter-spacing:-.025em;margin:16px 0 18px;color:#F2E2D2;text-wrap:pretty">A note on AI, art, and actual humans.</h1>
+    <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:19px;color:#E8B98A;margin:0 0 54px">Pillow talk from Misha</p>
+    <article style="max-width:720px">
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">As an artist, I think it's important to be transparent about what's made by humans and what's made by AI. So, in the spirit of full disclosure, here's how The Dream Reader came to be and why…</p>
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">First, I can confirm that I, Misha Collins, an actual human being, dreamed up this app. There is a certain read-by-the-author audio book that puts me to sleep almost instantly and I thought, if his boring voice can put me to sleep, perhaps, my boring voice will put you to sleep!</p>
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">For a lot of us grown-ups, falling asleep can be hard, not getting enough sleep impacts our mental health, our physical health, our productivity, our social lives, our families—it impacts how our pets feel about us! It’s serious shit! So if people use this app and it works for them, they will be happier, healthier humans, and isn’t that something to strive for?!</p>
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">I went into an actual recording studio, run by actual humans, and recorded my actual voice. I worked with a talented team of real people to develop the app, shape its design, and bring the whole thing to life. And I actually give a shit about whether you get a good night's sleep.</p>
+      <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:400;line-height:1.25;color:#F2E2D2;margin:44px 0 16px">Where AI comes in</h2>
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">But we also used AI as a tool to replicate my voice. I don’t have time to read dozens of books aloud, but the books I used are either mine or in the public domain. Wherever I used an AI replica of my voice, it was at my direction and with my approval. This is me using my own vocal likeness to produce something that was my own creative inspiration. This is not someone stealing my voice to make something creepy in the world, nor is it me trying to trick the world into thinking I did something I did not.</p>
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">I believe these tools can be incredibly useful, but I also believe we have to be careful and ethical in how we use them and be transparent when we do. That's a commitment we're making as we continue to develop The Dream Reader.</p>
+      <p style="font-size:17px;line-height:1.78;color:rgba(242,226,210,.78);margin:0 0 22px;text-wrap:pretty">Another thing: Where an AI replica of my voice is used, we render the audio file once for thousands of users rather than generating it anew every time someone listens. So rest easy knowing that we didn’t have to build a new data center to get this app up and running.</p>
+      <div style="margin:44px 0 0;padding:30px 0 0;border-top:1px solid rgba(242,226,210,.12)">
+        <p style="font-family:'Playfair Display',Georgia,serif;font-size:24px;line-height:1.4;color:#F2E2D2;margin:0 0 28px;text-wrap:pretty">If you have ever wanted to go to sleep with me, it’s finally going to happen now.</p>
+        <p style="font-size:16px;color:rgba(242,226,210,.6);margin:0 0 6px">Thanks,</p>
+        <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;color:#E8B98A;margin:0">The real Misha.</p>
+      </div>
+    </article>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1000px;margin:0 auto;padding:80px 34px 110px">
+    <span style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,226,210,.5)">Contact</span>
+    <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:60px;line-height:1.06;font-weight:400;letter-spacing:-.025em;margin:16px 0 18px;color:#F2E2D2">Say hello.</h1>
+    <p style="font-size:17.5px;line-height:1.64;color:rgba(242,226,210,.7);max-width:520px;margin:0 0 54px;text-wrap:pretty">Questions about your subscription, a story you'd like us to record, or a bug that woke you up at 3am — we read everything and usually reply within two business days.</p>
+    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start">
+      <div style="padding:34px;border:1px solid rgba(242,226,210,.12);border-radius:20px;background:linear-gradient(165deg,rgba(58,33,48,.6),rgba(29,18,25,.35))">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:36px 8px;text-align:center">
+            <div style="font-family:'Playfair Display',Georgia,serif;font-size:30px;color:#E8B98A;margin-bottom:12px">Check your email app</div>
+            <p style="font-size:15.5px;line-height:1.6;color:rgba(242,226,210,.66);margin:0 0 8px">Your message is drafted and ready to send. Hit send there and we'll pick it up.</p>
+            <p style="font-size:14.5px;line-height:1.6;color:rgba(242,226,210,.5);margin:0">Nothing opened? Write to <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form sc-camel-on-submit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:20px">
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,226,210,.55)">Name</span>
+            <input type="text" name="name" required="required" placeholder="Your name" style="font-family:Inter,sans-serif;font-size:15.5px;color:#F2E2D2;background:rgba(18,9,14,.6);border:1px solid rgba(242,226,210,.16);border-radius:10px;padding:13px 15px;outline:none" style-focus="border-color:#E8B98A">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,226,210,.55)">Email</span>
+            <input type="email" name="email" required="required" placeholder="you@example.com" style="font-family:Inter,sans-serif;font-size:15.5px;color:#F2E2D2;background:rgba(18,9,14,.6);border:1px solid rgba(242,226,210,.16);border-radius:10px;padding:13px 15px;outline:none" style-focus="border-color:#E8B98A">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,226,210,.55)">What's this about?</span>
+            <sc-raw-select name="subject" style="font-family:Inter,sans-serif;font-size:15.5px;color:#F2E2D2;background:rgba(18,9,14,.6);border:1px solid rgba(242,226,210,.16);border-radius:10px;padding:13px 15px;outline:none" style-focus="border-color:#E8B98A">
+              <option>Help with my subscription</option>
+              <option>Something isn't working</option>
+              <option>Suggest a story</option>
+              <option>Press &amp; partnerships</option>
+              <option>Privacy request</option>
+            </sc-raw-select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,226,210,.55)">Message</span>
+            <textarea rows="5" name="message" required="required" placeholder="Tell us what happened…" style="font-family:Inter,sans-serif;font-size:15.5px;line-height:1.55;color:#F2E2D2;background:rgba(18,9,14,.6);border:1px solid rgba(242,226,210,.16);border-radius:10px;padding:13px 15px;outline:none;resize:vertical" style-focus="border-color:#E8B98A"></textarea>
+          </label>
+          <button type="submit" style="font-family:Inter,sans-serif;font-size:15px;font-weight:600;color:#1D1219;background:#E8B98A;border:none;border-radius:999px;padding:15px 30px;cursor:pointer;align-self:flex-start" style-hover="background:#F2E2D2">Send message</button>
+        </form>
+        </sc-if>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div>
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,226,210,.5);margin-bottom:10px">Email</div>
+          <a href="mailto:info@thedreamreader.com" style="font-family:'Playfair Display',Georgia,serif;font-size:21px">info@thedreamreader.com</a>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,226,210,.5);margin-bottom:10px">Privacy requests</div>
+          <a href="mailto:privacy@thedreamreader.com" style="font-family:'Playfair Display',Georgia,serif;font-size:21px">privacy@thedreamreader.com</a>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,226,210,.5);margin-bottom:10px">Post</div>
+          <p style="font-size:15.5px;line-height:1.66;color:rgba(242,226,210,.68);margin:0">The Dream Reader App<br>c/o All7Studios<br>11444 W. Olympic Blvd., 11th Floor<br>Los Angeles, CA 90064<br>United States</p>
+        </div>
+        <div style="padding-top:24px;border-top:1px solid rgba(242,226,210,.12)">
+          <p style="font-size:14.5px;line-height:1.62;color:rgba(242,226,210,.55);margin:0">Billing is handled by the App Store or Google Play. To cancel, manage your subscription in your device settings — we can't do it for you, but we're happy to walk you through it.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isLegal }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1180px;margin:0 auto;padding:74px 34px 110px">
+    <div style="max-width:760px;margin-bottom:56px">
+      <span style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,226,210,.5)">Legal</span>
+      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:54px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin:16px 0 14px;color:#F2E2D2">{{ legalTitle }}</h1>
+      <p style="font-size:14.5px;color:rgba(242,226,210,.5);margin:0">Last updated {{ lastUpdated }}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:246px 1fr;gap:56px;align-items:start">
+      <nav style="position:sticky;top:96px;display:flex;flex-direction:column;gap:4px;max-height:calc(100vh - 140px);overflow-y:auto;padding-right:6px">
+        <a href="#/privacy" style="font-size:14px;padding:9px 12px;border-radius:8px;color:rgba(242,226,210,.66)" style-hover="background:rgba(242,226,210,.07);color:#F2E2D2">Privacy Policy</a>
+        <a href="#/terms" style="font-size:14px;padding:9px 12px;border-radius:8px;color:rgba(242,226,210,.66)" style-hover="background:rgba(242,226,210,.07);color:#F2E2D2">Terms of Use</a>
+        <a href="#/disclaimer" style="font-size:14px;padding:9px 12px;border-radius:8px;color:rgba(242,226,210,.66)" style-hover="background:rgba(242,226,210,.07);color:#F2E2D2">Disclaimer</a>
+        <div style="height:1px;background:rgba(242,226,210,.12);margin:14px 12px"></div>
+        <sc-for list="{{ toc }}" as="entry" hint-placeholder-count="6">
+          <a href="{{ entry.href }}" style="font-size:13px;line-height:1.45;padding:7px 12px;border-radius:8px;color:rgba(242,226,210,.5)" style-hover="color:#E8B98A;background:rgba(242,226,210,.05)">{{ entry.label }}</a>
+        </sc-for>
+      </nav>
+      <article style="max-width:780px">
+        <sc-for list="{{ body }}" as="item" hint-placeholder-count="14">
+          <div>
+            <sc-if value="{{ item.isH2 }}" hint-placeholder-val="{{ false }}">
+              <h2 id="{{ item.id }}" style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:400;line-height:1.25;color:#F2E2D2;margin:52px 0 16px;scroll-margin-top:100px;text-wrap:pretty">{{ item.text }}</h2>
+            </sc-if>
+            <sc-if value="{{ item.isH3 }}" hint-placeholder-val="{{ false }}">
+              <h3 style="font-size:16px;font-weight:600;letter-spacing:.01em;color:#E8B98A;margin:32px 0 12px;text-wrap:pretty">{{ item.text }}</h3>
+            </sc-if>
+            <sc-if value="{{ item.isP }}" hint-placeholder-val="{{ true }}">
+              <p style="font-size:15.5px;line-height:1.76;color:rgba(242,226,210,.74);margin:0 0 18px;text-wrap:pretty">{{ item.text }}</p>
+            </sc-if>
+            <sc-if value="{{ item.isNote }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:14px;padding:16px 18px;margin:0 0 22px;border-left:2px solid #A8613F;background:rgba(58,33,48,.5);border-radius:0 10px 10px 0">
+                <span style="font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#E8B98A;flex:none;padding-top:2px">In short</span>
+                <p style="font-size:14.5px;line-height:1.7;color:rgba(242,226,210,.72);margin:0;text-wrap:pretty">{{ item.text }}</p>
+              </div>
+            </sc-if>
+            <sc-if value="{{ item.isLi }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:12px;margin:0 0 9px;padding-left:4px">
+                <span style="width:5px;height:5px;border-radius:50%;background:#A8613F;flex:none;margin-top:9px"></span>
+                <p style="font-size:15px;line-height:1.7;color:rgba(242,226,210,.7);margin:0;text-wrap:pretty">{{ item.text }}</p>
+              </div>
+            </sc-if>
+            <sc-if value="{{ item.isTable }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px solid rgba(242,226,210,.12);border-radius:14px;overflow:hidden;margin:22px 0 26px">
+                <div style="display:grid;grid-template-columns:1.1fr 1.9fr 88px;gap:16px;padding:13px 18px;background:rgba(58,33,48,.7);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,226,210,.6)">
+                  <span>Category</span><span>Examples</span><span style="text-align:right">Collected</span>
+                </div>
+                <sc-for list="{{ item.rows }}" as="row" hint-placeholder-count="4">
+                  <div style="display:grid;grid-template-columns:1.1fr 1.9fr 88px;gap:16px;padding:15px 18px;border-top:1px solid rgba(242,226,210,.09)">
+                    <span style="font-size:14px;line-height:1.5;color:#F2E2D2">{{ row.cat }}</span>
+                    <span style="font-size:13.5px;line-height:1.6;color:rgba(242,226,210,.62)">{{ row.ex }}</span>
+                    <span style="font-size:12.5px;font-weight:600;letter-spacing:.08em;text-align:right;color:{{ row.color }}">{{ row.yes }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </article>
+    </div>
+  </main>
+  </sc-if>
+
+  <footer style="border-top:1px solid rgba(242,226,210,.1);background:#0E0609;padding:62px 34px 46px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:44px">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+            <img src="assets/img-06.webp" alt="" style="width:34px;height:34px;border-radius:10px;display:block">
+            <span style="font-family:'Playfair Display',Georgia,serif;font-size:19px;color:#F2E2D2">DreamReader</span>
+          </div>
+          <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:rgba(242,226,210,.6);margin:0 0 18px">Stories that lull you in.</p>
+          <p style="font-size:13px;line-height:1.7;color:rgba(242,226,210,.4);margin:0">The Dream Reader App, a subsidiary of All7Studios<br>11444 W. Olympic Blvd., 11th Floor, Los Angeles, CA 90064</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,226,210,.42);margin-bottom:4px">App</div>
+          <a href="#get" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Download for iOS</a>
+          <a href="#/contact" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Contact us</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,226,210,.42);margin-bottom:4px">Legal</div>
+          <a href="#/terms" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Terms of Use</a>
+          <a href="#/privacy" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Privacy Policy</a>
+          <a href="#/disclaimer" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">Disclaimer</a>
+          <a href="#/ai" style="font-size:14px;color:rgba(242,226,210,.66)" style-hover="color:#F2E2D2">AI Statement</a>
+        </div>
+      </div>
+      <div style="padding-top:26px;border-top:1px solid rgba(242,226,210,.08);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <span style="font-size:12.5px;color:rgba(242,226,210,.38)">© 2026 All7Studios. All rights reserved.</span>
+        <span style="font-size:12.5px;color:rgba(242,226,210,.38)">Not medical advice. See our <a href="#/disclaimer">disclaimer</a>.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;iosUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://apps.apple.com/app/idXXXXXXXXX&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;androidUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://play.google.com/store/apps/details?id=com.all7studios.dreamreader&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;info@thedreamreader.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact form&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', legal: null, timer: 30, sent: false };
+
+  componentDidMount() {
+    this.sync();
+    this._onHash = () => { if (this.sync()) this.scrollTo(0); };
+    window.addEventListener('hashchange', this._onHash);
+    import('./legal-content.js').then(m => this.setState({ legal: m.LEGAL })).catch(e => console.error(e));
+  }
+  componentWillUnmount() { window.removeEventListener('hashchange', this._onHash); }
+
+  sync() {
+    const hash = location.hash || '';
+    const h = hash.replace(/^#\/?/, '').split('?')[0];
+    const known = ['contact', 'privacy', 'terms', 'disclaimer', 'ai'];
+    if (known.indexOf(h) >= 0) {
+      const same = this.state.page === h;
+      this.setState({ page: h, sent: false });
+      const m = hash.match(/[?&]s=([^&]+)/);
+      if (m) {
+        const id = decodeURIComponent(m[1]);
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) this.scrollTo(el.getBoundingClientRect().top + this.scroller().scrollTop - 100);
+        }, same ? 0 : 120);
+        return false;
+      }
+      return true;
+    }
+    if (h === '' || hash === '#/') { this.setState({ page: 'home', sent: false }); return true; }
+    if (h === 'get') {
+      const wasHome = this.state.page === 'home';
+      if (!wasHome) this.setState({ page: 'home', sent: false });
+      setTimeout(() => {
+        const el = document.getElementById('get');
+        if (el) this.scrollTo(el.getBoundingClientRect().top + this.scroller().scrollTop - 70);
+      }, wasHome ? 0 : 60);
+    }
+    return false;
+  }
+
+  scroller() {
+    const de = document.scrollingElement || document.documentElement;
+    if (de.scrollHeight > de.clientHeight + 1) return de;
+    if (document.body.scrollHeight > document.body.clientHeight + 1) return document.body;
+    return de;
+  }
+  scrollTo(y) { const s = this.scroller(); s.scrollTop = y; window.scrollTo(0, y); }
+
+  slug(s) { return 's-' + s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 46); }
+
+  renderVals() {
+    const page = this.state.page;
+    const titles = { privacy: 'Privacy Policy', terms: 'Terms of Use', disclaimer: 'Disclaimer' };
+    const isLegal = !!titles[page];
+    const raw = (this.state.legal && this.state.legal[page]) || [];
+    const body = [], toc = [];
+    raw.forEach(it => {
+      const type = it[0], text = it[1];
+      if (type === 'toc') { toc.push({ label: text, href: '#/' + page + '?s=' + this.slug(text) }); return; }
+      const o = { text, isH2: type === 'h2', isH3: type === 'h3', isP: type === 'p', isNote: type === 'note', isLi: type === 'li', isTable: type === 'table', id: '', rows: [] };
+      if (type === 'h2') o.id = this.slug(text.replace(/^\d+\.\s*/, ''));
+      if (type === 'table') o.rows = it[1].map(r => ({ cat: r[0], ex: r[1], yes: r[2], color: r[2] === 'YES' ? '#E8B98A' : 'rgba(242,226,210,.4)' }));
+      body.push(o);
+    });
+    const t = this.state.timer;
+    const setT = n => () => this.setState({ timer: n });
+    return {
+      isHome: page === 'home', isContact: page === 'contact', isAi: page === 'ai', isLegal,
+      legalTitle: titles[page] || '', lastUpdated: 'August 6, 2026',
+      body, toc,
+      timer: t, fadeMinutes: Math.round(t / 3),
+      pick15: setT(15), pick30: setT(30), pick45: setT(45),
+      sent: this.state.sent, notSent: !this.state.sent,
+      iosUrl: this.props.iosUrl || 'https://apps.apple.com/app/idXXXXXXXXX',
+      androidUrl: this.props.androidUrl || 'https://play.google.com/store/apps/details?id=com.all7studios.dreamreader',
+      contactEmail: this.props.contactEmail || 'info@thedreamreader.com',
+      onSubmit: (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const to = this.props.contactEmail || 'info@thedreamreader.com';
+        const g = n => (f.elements[n] && f.elements[n].value) || '';
+        const subject = (g('subject') || 'Message from thedreamreader.com');
+        const body = g('message') + '\n\n—\n' + g('name') + '\n' + g('email');
+        window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+
+
+</body></html>
